@@ -16,6 +16,6 @@ RUN apt-get update && apt-get install -qy \
 ADD . /opt/go/src/github.com/oysterbooks/halfshell
 RUN cd /opt/go/src/github.com/oysterbooks/halfshell && make deps && make build
 
-ENTRYPOINT ["/opt/go/src/github.com/oysterbooks/halfshell/bin/halfshell"]
+ENTRYPOINT ["/opt/go/src/github.com/oysterbooks/halfshell/bin/halfshell", "/opt/go/src/github.com/oysterbooks/halfshell/config.json"]
 
 EXPOSE 8080
